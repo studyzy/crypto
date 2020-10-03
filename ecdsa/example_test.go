@@ -5,14 +5,15 @@
 package ecdsa_test
 
 import (
-	"crypto/ecdsa"
 	"crypto/elliptic"
 	"crypto/rand"
-	"crypto/sha256"
 	"fmt"
+	"github.com/studyzy/crypto/ecdsa"
+	"github.com/studyzy/crypto/sha256"
+	"testing"
 )
 
-func Example() {
+func TestExample(t *testing.T) {
 	privateKey, err := ecdsa.GenerateKey(elliptic.P256(), rand.Reader)
 	if err != nil {
 		panic(err)

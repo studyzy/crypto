@@ -7,7 +7,7 @@ package tls
 import (
 	"bytes"
 	"crypto"
-	"crypto/ecdsa"
+	"github.com/studyzy/crypto/ecdsa"
 	"crypto/ed25519"
 	"crypto/elliptic"
 	"crypto/rsa"

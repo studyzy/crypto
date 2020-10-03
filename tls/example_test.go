@@ -6,7 +6,7 @@ package tls_test
 
 import (
 	"crypto/tls"
-	"crypto/x509"
+	"github.com/studyzy/crypto/x509"
 	"errors"
 	"log"
 	"net/http"

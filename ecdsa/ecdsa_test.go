@@ -10,9 +10,9 @@ import (
 	"crypto/elliptic"
 	"crypto/rand"
 	"crypto/sha1"
-	"crypto/sha256"
 	"crypto/sha512"
 	"encoding/hex"
+	"github.com/studyzy/crypto/sha256"
 	"hash"
 	"io"
 	"math/big"
@@ -135,14 +135,14 @@ func testNonceSafety(t *testing.T, c elliptic.Curve, tag string) {
 	priv, _ := GenerateKey(c, rand.Reader)
 
 	hashed := []byte("testing")
-	r0, s0, err := Sign(zeroReader, priv, hashed)
+	r0, s0, err := Sign(nil, priv, hashed)
 	if err != nil {
 		t.Errorf("%s: error signing: %s", tag, err)
 		return
 	}
 
 	hashed = []byte("testing...")
-	r1, s1, err := Sign(zeroReader, priv, hashed)
+	r1, s1, err := Sign(nil, priv, hashed)
 	if err != nil {
 		t.Errorf("%s: error signing: %s", tag, err)
 		return

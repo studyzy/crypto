@@ -12,8 +12,8 @@ import (
 	"crypto/hmac"
 	"crypto/rc4"
 	"crypto/sha1"
-	"crypto/sha256"
-	"crypto/x509"
+	"github.com/studyzy/crypto/sha256"
+	"github.com/studyzy/crypto/x509"
 	"fmt"
 	"hash"
 

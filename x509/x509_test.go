@@ -12,7 +12,7 @@ import (
 	"crypto/elliptic"
 	"crypto/rand"
 	"crypto/rsa"
-	_ "crypto/sha256"
+	_ "github.com/studyzy/crypto/sha256"
 	_ "crypto/sha512"
 	"crypto/x509/pkix"
 	"encoding/asn1"

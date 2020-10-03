@@ -10,7 +10,7 @@ import (
 	"bytes"
 	"crypto/cipher"
 	"crypto/subtle"
-	"crypto/x509"
+	"github.com/studyzy/crypto/x509"
 	"errors"
 	"fmt"
 	"io"

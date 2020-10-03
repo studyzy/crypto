@@ -18,7 +18,7 @@ package main
 
 import (
 	"bytes"
-	"crypto/sha256"
+	"github.com/studyzy/crypto/sha256"
 	"crypto/x509"
 	"encoding/hex"
 	"encoding/pem"

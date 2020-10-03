@@ -9,7 +9,7 @@ import (
 	"crypto/aes"
 	"crypto/cipher"
 	"crypto/hmac"
-	"crypto/sha256"
+	"github.com/studyzy/crypto/sha256"
 	"crypto/subtle"
 	"errors"
 	"golang.org/x/crypto/cryptobyte"

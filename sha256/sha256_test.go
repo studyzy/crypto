@@ -8,7 +8,6 @@ package sha256
 
 import (
 	"bytes"
-	"crypto/rand"
 	"encoding"
 	"fmt"
 	"hash"
@@ -211,18 +210,6 @@ func TestBlockSize(t *testing.T) {
 	c := New()
 	if got := c.BlockSize(); got != BlockSize {
 		t.Errorf("BlockSize = %d want %d", got, BlockSize)
-	}
-}
-
-// Tests that blockGeneric (pure Go) and block (in assembly for some architectures) match.
-func TestBlockGeneric(t *testing.T) {
-	gen, asm := New().(*digest), New().(*digest)
-	buf := make([]byte, BlockSize*20) // arbitrary factor
-	rand.Read(buf)
-	blockGeneric(gen, buf)
-	block(asm, buf)
-	if *gen != *asm {
-		t.Error("block and blockGeneric resulted in different states")
 	}
 }
 
