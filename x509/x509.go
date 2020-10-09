@@ -13,14 +13,16 @@ import (
 	"bytes"
 	"crypto"
 	"crypto/dsa"
-	"github.com/studyzy/crypto/ecdsa"
 	"crypto/ed25519"
 	"crypto/elliptic"
 	"crypto/rsa"
 	_ "crypto/sha1"
-	_ "github.com/studyzy/crypto/sha256"
 	_ "crypto/sha512"
-	"crypto/x509/pkix"
+	"github.com/studyzy/crypto/ecdsa"
+	_ "github.com/studyzy/crypto/sha256"
+	"github.com/studyzy/crypto/x509/pkix"
+	"github.com/tjfoc/gmsm/sm2"
+
 	"encoding/asn1"
 	"encoding/pem"
 	"errors"
@@ -233,7 +235,7 @@ const (
 var publicKeyAlgoName = [...]string{
 	RSA:     "RSA",
 	DSA:     "DSA",
-	ECDSA:   "ECDSA",
+	ECDSA:   "SM2",
 	Ed25519: "Ed25519",
 }
 
@@ -300,17 +302,18 @@ func (algo PublicKeyAlgorithm) String() string {
 // id-Ed25519   OBJECT IDENTIFIER ::= { 1 3 101 112 }
 
 var (
-	oidSignatureMD2WithRSA      = asn1.ObjectIdentifier{1, 2, 840, 113549, 1, 1, 2}
-	oidSignatureMD5WithRSA      = asn1.ObjectIdentifier{1, 2, 840, 113549, 1, 1, 4}
-	oidSignatureSHA1WithRSA     = asn1.ObjectIdentifier{1, 2, 840, 113549, 1, 1, 5}
-	oidSignatureSHA256WithRSA   = asn1.ObjectIdentifier{1, 2, 840, 113549, 1, 1, 11}
-	oidSignatureSHA384WithRSA   = asn1.ObjectIdentifier{1, 2, 840, 113549, 1, 1, 12}
-	oidSignatureSHA512WithRSA   = asn1.ObjectIdentifier{1, 2, 840, 113549, 1, 1, 13}
-	oidSignatureRSAPSS          = asn1.ObjectIdentifier{1, 2, 840, 113549, 1, 1, 10}
-	oidSignatureDSAWithSHA1     = asn1.ObjectIdentifier{1, 2, 840, 10040, 4, 3}
-	oidSignatureDSAWithSHA256   = asn1.ObjectIdentifier{2, 16, 840, 1, 101, 3, 4, 3, 2}
-	oidSignatureECDSAWithSHA1   = asn1.ObjectIdentifier{1, 2, 840, 10045, 4, 1}
-	oidSignatureECDSAWithSHA256 = asn1.ObjectIdentifier{1, 2, 840, 10045, 4, 3, 2}
+	oidSignatureMD2WithRSA    = asn1.ObjectIdentifier{1, 2, 840, 113549, 1, 1, 2}
+	oidSignatureMD5WithRSA    = asn1.ObjectIdentifier{1, 2, 840, 113549, 1, 1, 4}
+	oidSignatureSHA1WithRSA   = asn1.ObjectIdentifier{1, 2, 840, 113549, 1, 1, 5}
+	oidSignatureSHA256WithRSA = asn1.ObjectIdentifier{1, 2, 840, 113549, 1, 1, 11}
+	oidSignatureSHA384WithRSA = asn1.ObjectIdentifier{1, 2, 840, 113549, 1, 1, 12}
+	oidSignatureSHA512WithRSA = asn1.ObjectIdentifier{1, 2, 840, 113549, 1, 1, 13}
+	oidSignatureRSAPSS        = asn1.ObjectIdentifier{1, 2, 840, 113549, 1, 1, 10}
+	oidSignatureDSAWithSHA1   = asn1.ObjectIdentifier{1, 2, 840, 10040, 4, 3}
+	oidSignatureDSAWithSHA256 = asn1.ObjectIdentifier{2, 16, 840, 1, 101, 3, 4, 3, 2}
+	oidSignatureECDSAWithSHA1 = asn1.ObjectIdentifier{1, 2, 840, 10045, 4, 1}
+	//oidSignatureECDSAWithSHA256 = asn1.ObjectIdentifier{1, 2, 840, 10045, 4, 3, 2}
+	oidSignatureECDSAWithSHA256 = asn1.ObjectIdentifier{1, 2, 156, 10197, 1, 501} //oidSignatureSM2WithSM3
 	oidSignatureECDSAWithSHA384 = asn1.ObjectIdentifier{1, 2, 840, 10045, 4, 3, 3}
 	oidSignatureECDSAWithSHA512 = asn1.ObjectIdentifier{1, 2, 840, 10045, 4, 3, 4}
 	oidSignatureEd25519         = asn1.ObjectIdentifier{1, 3, 101, 112}
@@ -347,7 +350,7 @@ var signatureAlgorithmDetails = []struct {
 	{DSAWithSHA1, "DSA-SHA1", oidSignatureDSAWithSHA1, DSA, crypto.SHA1},
 	{DSAWithSHA256, "DSA-SHA256", oidSignatureDSAWithSHA256, DSA, crypto.SHA256},
 	{ECDSAWithSHA1, "ECDSA-SHA1", oidSignatureECDSAWithSHA1, ECDSA, crypto.SHA1},
-	{ECDSAWithSHA256, "ECDSA-SHA256", oidSignatureECDSAWithSHA256, ECDSA, crypto.SHA256},
+	{ECDSAWithSHA256, "SM2-SM3", oidSignatureECDSAWithSHA256, ECDSA, crypto.SHA256},
 	{ECDSAWithSHA384, "ECDSA-SHA384", oidSignatureECDSAWithSHA384, ECDSA, crypto.SHA384},
 	{ECDSAWithSHA512, "ECDSA-SHA512", oidSignatureECDSAWithSHA512, ECDSA, crypto.SHA512},
 	{PureEd25519, "Ed25519", oidSignatureEd25519, Ed25519, crypto.Hash(0) /* no pre-hashing */},
@@ -519,7 +522,8 @@ func getPublicKeyAlgorithmFromOID(oid asn1.ObjectIdentifier) PublicKeyAlgorithm 
 // NB: secp256r1 is equivalent to prime256v1
 var (
 	oidNamedCurveP224 = asn1.ObjectIdentifier{1, 3, 132, 0, 33}
-	oidNamedCurveP256 = asn1.ObjectIdentifier{1, 2, 840, 10045, 3, 1, 7}
+	//oidNamedCurveP256 = asn1.ObjectIdentifier{1, 2, 840, 10045, 3, 1, 7}
+	oidNamedCurveP256 = asn1.ObjectIdentifier{1, 2, 156, 10197, 1, 301} //oidNamedCurveP256SM2
 	oidNamedCurveP384 = asn1.ObjectIdentifier{1, 3, 132, 0, 34}
 	oidNamedCurveP521 = asn1.ObjectIdentifier{1, 3, 132, 0, 35}
 )
@@ -529,7 +533,7 @@ func namedCurveFromOID(oid asn1.ObjectIdentifier) elliptic.Curve {
 	case oid.Equal(oidNamedCurveP224):
 		return elliptic.P224()
 	case oid.Equal(oidNamedCurveP256):
-		return elliptic.P256()
+		return sm2.P256Sm2()
 	case oid.Equal(oidNamedCurveP384):
 		return elliptic.P384()
 	case oid.Equal(oidNamedCurveP521):
@@ -542,7 +546,7 @@ func oidFromNamedCurve(curve elliptic.Curve) (asn1.ObjectIdentifier, bool) {
 	switch curve {
 	case elliptic.P224():
 		return oidNamedCurveP224, true
-	case elliptic.P256():
+	case sm2.P256Sm2():
 		return oidNamedCurveP256, true
 	case elliptic.P384():
 		return oidNamedCurveP384, true
