@@ -20,7 +20,7 @@ import (
 	_ "crypto/sha512"
 	"github.com/studyzy/crypto/ecdsa"
 	_ "github.com/studyzy/crypto/sha256"
-	"github.com/studyzy/crypto/x509/pkix"
+	"crypto/x509/pkix"
 	"github.com/tjfoc/gmsm/sm2"
 
 	"encoding/asn1"

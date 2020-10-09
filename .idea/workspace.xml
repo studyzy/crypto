@@ -2,47 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="582c7a39-25d3-4c9d-a5ef-fb011674cd41" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecdsa/ecdsa.go" beforeDir="false" afterPath="$PROJECT_DIR$/ecdsa/ecdsa.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecdsa/ecdsa_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/ecdsa/ecdsa_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecdsa/example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/ecdsa/example_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sha256/example_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sha256/fallback_test.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sha256/sha256.go" beforeDir="false" afterPath="$PROJECT_DIR$/sha256/sha256.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sha256/sha256_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/sha256/sha256_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sha256/sha256block.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sha256/sha256block_386.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sha256/sha256block_amd64.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sha256/sha256block_amd64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sha256/sha256block_arm64.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sha256/sha256block_arm64.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sha256/sha256block_decl.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sha256/sha256block_generic.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sha256/sha256block_ppc64le.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sha256/sha256block_s390x.go" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sha256/sha256block_s390x.s" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/cipher_suites.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/cipher_suites.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/common.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/common.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/conn.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/conn.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/example_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/generate_cert.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/generate_cert.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/handshake_client.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/handshake_client.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/handshake_client_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/handshake_client_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/handshake_server.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/handshake_server.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/handshake_server_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/handshake_server_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/handshake_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/handshake_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/key_agreement.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/key_agreement.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/prf.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/prf.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/ticket.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/ticket.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/tls.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/tls.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/tls_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/tls_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x509/pkcs8.go" beforeDir="false" afterPath="$PROJECT_DIR$/x509/pkcs8.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x509/root_darwin_arm_gen.go" beforeDir="false" afterPath="$PROJECT_DIR$/x509/root_darwin_arm_gen.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x509/sec1.go" beforeDir="false" afterPath="$PROJECT_DIR$/x509/sec1.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/x509/x509.go" beforeDir="false" afterPath="$PROJECT_DIR$/x509/x509.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x509/x509_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/x509/x509_test.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
