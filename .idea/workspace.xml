@@ -3,24 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="582c7a39-25d3-4c9d-a5ef-fb011674cd41" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecdsa/ecdsa.go" beforeDir="false" afterPath="$PROJECT_DIR$/ecdsa/ecdsa.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecdsa/ecdsa_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/ecdsa/ecdsa_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecdsa/example_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/ecdsa/example_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elliptic/elliptic.go" beforeDir="false" afterPath="$PROJECT_DIR$/elliptic/elliptic.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elliptic/p224.go" beforeDir="false" afterPath="$PROJECT_DIR$/elliptic/p224.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/elliptic/sm2.go" beforeDir="false" afterPath="$PROJECT_DIR$/elliptic/sm2.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sha256/sha256.go" beforeDir="false" afterPath="$PROJECT_DIR$/sha256/sha256.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/common.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/common.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/generate_cert.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/generate_cert.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/handshake_server_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/handshake_server_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tls/key_schedule.go" beforeDir="false" afterPath="$PROJECT_DIR$/tls/key_schedule.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x509/name_constraints_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/x509/name_constraints_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x509/pkcs8_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/x509/pkcs8_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x509/sec1.go" beforeDir="false" afterPath="$PROJECT_DIR$/x509/sec1.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x509/verify_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/x509/verify_test.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x509/x509.go" beforeDir="false" afterPath="$PROJECT_DIR$/x509/x509.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x509/x509_test.go" beforeDir="false" afterPath="$PROJECT_DIR$/x509/x509_test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elliptic/p256.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elliptic/p256_asm.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elliptic/p256_asm_amd64.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elliptic/p256_asm_arm64.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elliptic/p256_asm_ppc64le.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elliptic/p256_asm_s390x.s" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elliptic/p256_generic.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elliptic/p256_ppc64le.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/elliptic/p256_s390x.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,10 +135,11 @@
       <screen x="0" y="23" width="1440" height="801" />
     </state>
     <state x="229" y="62" key="SettingsEditor/0.23.1440.801@0.23.1440.801" timestamp="1601740935773" />
-    <state x="427" y="180" width="586" height="556" key="find.popup" timestamp="1602319668648">
-      <screen x="0" y="23" width="1440" height="812" />
+    <state x="427" y="180" width="586" height="556" key="find.popup" timestamp="1602321488596">
+      <screen x="0" y="23" width="1440" height="811" />
     </state>
     <state x="427" y="178" width="586" height="548" key="find.popup/0.23.1440.801@0.23.1440.801" timestamp="1601743665443" />
+    <state x="427" y="180" width="586" height="556" key="find.popup/0.23.1440.811@0.23.1440.811" timestamp="1602321488596" />
     <state x="427" y="180" width="586" height="556" key="find.popup/0.23.1440.812@0.23.1440.812" timestamp="1602319668648" />
   </component>
 </project>
