@@ -18,6 +18,7 @@ limitations under the License.
 package elliptic
 
 import (
+	"crypto/elliptic"
 	"math/big"
 )
 
@@ -48,7 +49,7 @@ import (
 
 type sm2P256Curve struct {
 	RInverse *big.Int
-	*CurveParams
+	*elliptic.CurveParams
 	a, b, gx, gy sm2P256FieldElement
 }
 
@@ -63,7 +64,7 @@ const (
 )
 
 func initP256Sm2() {
-	sm2P256.CurveParams = &CurveParams{Name: "SM2-P-256"} // sm2
+	sm2P256.CurveParams = &elliptic.CurveParams{Name: "SM2-P-256"} // sm2
 	A, _ := new(big.Int).SetString("FFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000FFFFFFFFFFFFFFFC", 16)
 	//SM2椭	椭 圆 曲 线 公 钥 密 码 算 法 推 荐 曲 线 参 数
 	sm2P256.P, _ = new(big.Int).SetString("FFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000FFFFFFFFFFFFFFFF", 16)
@@ -84,7 +85,7 @@ func initP256Sm2() {
 //	return sm2P256
 //}
 
-func (curve sm2P256Curve) Params() *CurveParams {
+func (curve sm2P256Curve) Params() *elliptic.CurveParams {
 	return sm2P256.CurveParams
 }
 
@@ -113,6 +114,13 @@ func (curve sm2P256Curve) IsOnCurve(X, Y *big.Int) bool {
 //	return z
 //}
 
+func zForAffine(x, y *big.Int) *big.Int {
+	z := new(big.Int)
+	if x.Sign() != 0 || y.Sign() != 0 {
+		z.SetInt64(1)
+	}
+	return z
+}
 func (curve sm2P256Curve) Add(x1, y1, x2, y2 *big.Int) (*big.Int, *big.Int) {
 	var X1, Y1, Z1, X2, Y2, Z2, X3, Y3, Z3 sm2P256FieldElement
 
