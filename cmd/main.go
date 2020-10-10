@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"runtime/debug"
 
 	"github.com/studyzy/crypto/ecdsa"
 	"github.com/studyzy/crypto/elliptic"
@@ -12,6 +13,7 @@ func main() {
 	k, err := ecdsa.GenerateKey(elliptic.P256(), nil)
 	if err != nil {
 		fmt.Print(err)
+		debug.PrintStack()
 	}
 	fmt.Printf("%#v\n", k)
 	pubKey := k.PublicKey

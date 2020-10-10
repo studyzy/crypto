@@ -20,7 +20,7 @@ import (
 	"crypto/x509/pkix"
 	"github.com/studyzy/crypto/ecdsa"
 	"github.com/studyzy/crypto/elliptic"
-	"github.com/studyzy/crypto/internal/sm2"
+
 	_ "github.com/studyzy/crypto/sha256"
 
 	"encoding/asn1"
@@ -533,7 +533,7 @@ func namedCurveFromOID(oid asn1.ObjectIdentifier) elliptic.Curve {
 	case oid.Equal(oidNamedCurveP224):
 		return elliptic.P224()
 	case oid.Equal(oidNamedCurveP256):
-		return sm2.P256Sm2()
+		return elliptic.P256()
 	case oid.Equal(oidNamedCurveP384):
 		return elliptic.P384()
 	case oid.Equal(oidNamedCurveP521):
