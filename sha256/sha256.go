@@ -1,15 +1,16 @@
 package sha256
 
 import (
+	"crypto"
 	"hash"
 
 	"github.com/studyzy/crypto/internal/sm3"
 )
 
-//func init() {
-//	crypto.RegisterHash(crypto.SHA224, New224)
-//	crypto.RegisterHash(crypto.SHA256, New)
-//}
+func init() {
+	crypto.RegisterHash(crypto.SHA224, New224)
+	crypto.RegisterHash(crypto.SHA256, New)
+}
 
 // The size of a SHA256 checksum in bytes.
 const Size = 32

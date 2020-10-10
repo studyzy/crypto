@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="582c7a39-25d3-4c9d-a5ef-fb011674cd41" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmd/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/cmd/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ecdsa/ecdsa.go" beforeDir="false" afterPath="$PROJECT_DIR$/ecdsa/ecdsa.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x509/x509.go" beforeDir="false" afterPath="$PROJECT_DIR$/x509/x509.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sha256/sha256.go" beforeDir="false" afterPath="$PROJECT_DIR$/sha256/sha256.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +95,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="x509 support sm2" />
     <MESSAGE value="remove p256 from elliptic" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove p256 from elliptic" />
+    <MESSAGE value="Fix bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix bug" />
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
@@ -112,11 +111,11 @@
       <screen x="0" y="23" width="1440" height="801" />
     </state>
     <state x="520" y="264" key="#Go_Modules/0.23.1440.801@0.23.1440.801" timestamp="1601740305185" />
-    <state x="327" y="23" key="CommitChangelistDialog2" timestamp="1602321679463">
+    <state x="327" y="23" key="CommitChangelistDialog2" timestamp="1602323460239">
       <screen x="0" y="23" width="1440" height="811" />
     </state>
     <state x="327" y="23" key="CommitChangelistDialog2/0.23.1440.806@0.23.1440.806" timestamp="1602237282341" />
-    <state x="327" y="23" key="CommitChangelistDialog2/0.23.1440.811@0.23.1440.811" timestamp="1602321679463" />
+    <state x="327" y="23" key="CommitChangelistDialog2/0.23.1440.811@0.23.1440.811" timestamp="1602323460239" />
     <state width="534" height="466" key="DebuggerActiveHint" timestamp="1602322314421">
       <screen x="0" y="23" width="1440" height="811" />
     </state>
@@ -169,11 +168,11 @@
       <screen x="0" y="23" width="1440" height="811" />
     </state>
     <state x="320" y="171" key="Vcs.Push.Dialog.v2/0.23.1440.811@0.23.1440.811" timestamp="1602321686454" />
-    <state x="427" y="180" width="586" height="556" key="find.popup" timestamp="1602321488596">
+    <state x="427" y="180" width="586" height="556" key="find.popup" timestamp="1602323379873">
       <screen x="0" y="23" width="1440" height="811" />
     </state>
     <state x="427" y="178" width="586" height="548" key="find.popup/0.23.1440.801@0.23.1440.801" timestamp="1601743665443" />
-    <state x="427" y="180" width="586" height="556" key="find.popup/0.23.1440.811@0.23.1440.811" timestamp="1602321488596" />
+    <state x="427" y="180" width="586" height="556" key="find.popup/0.23.1440.811@0.23.1440.811" timestamp="1602323379873" />
     <state x="427" y="180" width="586" height="556" key="find.popup/0.23.1440.812@0.23.1440.812" timestamp="1602319668648" />
   </component>
   <component name="XDebuggerManager">
