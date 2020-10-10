@@ -9,7 +9,7 @@ import (
 	"crypto/dsa"
 	"crypto/ecdsa"
 	"crypto/ed25519"
-	"crypto/elliptic"
+	"github.com/studyzy/crypto/elliptic"
 	"crypto/rand"
 	"crypto/rsa"
 	_ "github.com/studyzy/crypto/sha256"

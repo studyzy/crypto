@@ -7,7 +7,7 @@ package ecdsa
 import (
 	"bufio"
 	"compress/bzip2"
-	"crypto/elliptic"
+	"github.com/studyzy/crypto/elliptic"
 	"crypto/rand"
 	"crypto/sha1"
 	"crypto/sha512"

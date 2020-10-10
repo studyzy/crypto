@@ -5,7 +5,7 @@
 package tls
 
 import (
-	"crypto/elliptic"
+	"github.com/studyzy/crypto/elliptic"
 	"crypto/hmac"
 	"errors"
 	"hash"

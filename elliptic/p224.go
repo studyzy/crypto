@@ -10,20 +10,19 @@ package elliptic
 // See https://www.imperialviolet.org/2010/12/04/ecc.html ([1]) for background.
 
 import (
-	"crypto/elliptic"
 	"math/big"
 )
 
 var p224 p224Curve
 
 type p224Curve struct {
-	*elliptic.CurveParams
+	*CurveParams
 	gx, gy, b p224FieldElement
 }
 
 func initP224() {
 	// See FIPS 186-3, section D.2.2
-	p224.CurveParams = &elliptic.CurveParams{Name: "P-224"}
+	p224.CurveParams = &CurveParams{Name: "P-224"}
 	p224.P, _ = new(big.Int).SetString("26959946667150639794667015087019630673557916260026308143510066298881", 10)
 	p224.N, _ = new(big.Int).SetString("26959946667150639794667015087019625940457807714424391721682722368061", 10)
 	p224.B, _ = new(big.Int).SetString("b4050a850c04b3abf54132565044b0b7d7bfd8ba270b39432355ffb4", 16)
@@ -39,12 +38,12 @@ func initP224() {
 // P224 returns a Curve which implements P-224 (see FIPS 186-3, section D.2.2).
 //
 // The cryptographic operations are implemented using constant-time algorithms.
-func P224() elliptic.Curve {
+func P224() Curve {
 	initonce.Do(initAll)
 	return p224
 }
 
-func (curve p224Curve) Params() *elliptic.CurveParams {
+func (curve p224Curve) Params() *CurveParams {
 	return curve.CurveParams
 }
 

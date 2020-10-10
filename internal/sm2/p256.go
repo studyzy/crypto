@@ -1,5 +1,3 @@
-
-
 /*
 Copyright Suzhou Tongji Fintech Research Institute 2017 All Rights Reserved.
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -15,10 +13,12 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-package elliptic
+package sm2
 
 import (
+	"github.com/studyzy/crypto/elliptic"
 	"math/big"
+	"sync"
 )
 
 /** 学习标准库p256的优化方法实现sm2的快速版本
@@ -48,22 +48,23 @@ import (
 
 type sm2P256Curve struct {
 	RInverse *big.Int
-	*CurveParams
+	*elliptic.CurveParams
 	a, b, gx, gy sm2P256FieldElement
 }
 
-//var initonce1 sync.Once
+var initonce sync.Once
 var sm2P256 sm2P256Curve
 
 type sm2P256FieldElement [9]uint32
 type sm2P256LargeFieldElement [17]uint64
 
 const (
+	bottom28Bits = 0xFFFFFFF
 	bottom29Bits = 0x1FFFFFFF
 )
 
 func initP256Sm2() {
-	sm2P256.CurveParams = &CurveParams{Name: "SM2-P-256"} // sm2
+	sm2P256.CurveParams = &elliptic.CurveParams{Name: "SM2-P-256"} // sm2
 	A, _ := new(big.Int).SetString("FFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000FFFFFFFFFFFFFFFC", 16)
 	//SM2椭	椭 圆 曲 线 公 钥 密 码 算 法 推 荐 曲 线 参 数
 	sm2P256.P, _ = new(big.Int).SetString("FFFFFFFEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF00000000FFFFFFFFFFFFFFFF", 16)
@@ -79,12 +80,12 @@ func initP256Sm2() {
 	sm2P256FromBig(&sm2P256.b, sm2P256.B)
 }
 
-//func P256Sm2() Curve {
-//	initonce1.Do(initP256Sm2)
-//	return sm2P256
-//}
+func P256Sm2() elliptic.Curve {
+	initonce.Do(initP256Sm2)
+	return sm2P256
+}
 
-func (curve sm2P256Curve) Params() *CurveParams {
+func (curve sm2P256Curve) Params() *elliptic.CurveParams {
 	return sm2P256.CurveParams
 }
 
@@ -105,13 +106,13 @@ func (curve sm2P256Curve) IsOnCurve(X, Y *big.Int) bool {
 	return sm2P256ToBig(&x3).Cmp(sm2P256ToBig(&y2)) == 0
 }
 
-//func zForAffine(x, y *big.Int) *big.Int {
-//	z := new(big.Int)
-//	if x.Sign() != 0 || y.Sign() != 0 {
-//		z.SetInt64(1)
-//	}
-//	return z
-//}
+func zForAffine(x, y *big.Int) *big.Int {
+	z := new(big.Int)
+	if x.Sign() != 0 || y.Sign() != 0 {
+		z.SetInt64(1)
+	}
+	return z
+}
 
 func (curve sm2P256Curve) Add(x1, y1, x2, y2 *big.Int) (*big.Int, *big.Int) {
 	var X1, Y1, Z1, X2, Y2, Z2, X3, Y3, Z3 sm2P256FieldElement

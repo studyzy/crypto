@@ -3,7 +3,7 @@ package sha256
 import (
 	"hash"
 
-	"github.com/tjfoc/gmsm/sm3"
+	"github.com/studyzy/crypto/internal/sm3"
 )
 
 //func init() {

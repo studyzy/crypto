@@ -2,10 +2,10 @@ package ecdsa
 
 import (
 	"crypto"
-	"crypto/elliptic"
+	"github.com/studyzy/crypto/elliptic"
 	"encoding/asn1"
 	"errors"
-	"github.com/tjfoc/gmsm/sm2"
+	"github.com/studyzy/crypto/internal/sm2"
 	"io"
 	"math/big"
 )

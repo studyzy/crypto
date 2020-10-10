@@ -7,7 +7,7 @@ package tls
 import (
 	"bytes"
 	"crypto"
-	"crypto/elliptic"
+	"github.com/studyzy/crypto/elliptic"
 	"github.com/studyzy/crypto/x509"
 	"encoding/pem"
 	"errors"
