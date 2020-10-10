@@ -2,12 +2,13 @@ package ecdsa
 
 import (
 	"crypto"
-	"github.com/studyzy/crypto/elliptic"
 	"encoding/asn1"
 	"errors"
-	"github.com/studyzy/crypto/internal/sm2"
 	"io"
 	"math/big"
+
+	"github.com/studyzy/crypto/elliptic"
+	"github.com/studyzy/crypto/internal/sm2"
 )
 
 // PublicKey represents an ECDSA public key.

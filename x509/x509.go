@@ -14,14 +14,14 @@ import (
 	"crypto"
 	"crypto/dsa"
 	"crypto/ed25519"
-	"github.com/studyzy/crypto/elliptic"
 	"crypto/rsa"
 	_ "crypto/sha1"
 	_ "crypto/sha512"
-	"github.com/studyzy/crypto/ecdsa"
-	_ "github.com/studyzy/crypto/sha256"
 	"crypto/x509/pkix"
+	"github.com/studyzy/crypto/ecdsa"
+	"github.com/studyzy/crypto/elliptic"
 	"github.com/studyzy/crypto/internal/sm2"
+	_ "github.com/studyzy/crypto/sha256"
 
 	"encoding/asn1"
 	"encoding/pem"
@@ -546,7 +546,7 @@ func oidFromNamedCurve(curve elliptic.Curve) (asn1.ObjectIdentifier, bool) {
 	switch curve {
 	case elliptic.P224():
 		return oidNamedCurveP224, true
-	case sm2.P256Sm2():
+	case elliptic.P256():
 		return oidNamedCurveP256, true
 	case elliptic.P384():
 		return oidNamedCurveP384, true
