@@ -5,13 +5,13 @@
 package tls
 
 import (
-	"crypto"
 	"crypto/md5"
 	"crypto/rsa"
 	"crypto/sha1"
-	"github.com/studyzy/crypto/x509"
 	"errors"
 	"fmt"
+	"github.com/studyzy/crypto"
+	"github.com/studyzy/crypto/x509"
 	"io"
 )
 

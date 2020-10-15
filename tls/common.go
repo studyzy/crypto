@@ -7,13 +7,13 @@ package tls
 import (
 	"bytes"
 	"container/list"
-	"crypto"
-	"github.com/studyzy/crypto/ecdsa"
 	"crypto/ed25519"
-	"github.com/studyzy/crypto/elliptic"
 	"crypto/rand"
 	"crypto/rsa"
 	"crypto/sha512"
+	"github.com/studyzy/crypto"
+	"github.com/studyzy/crypto/ecdsa"
+	"github.com/studyzy/crypto/elliptic"
 	"github.com/studyzy/crypto/x509"
 	"golang.org/x/sys/cpu"
 

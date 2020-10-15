@@ -13,14 +13,14 @@ package tls
 
 import (
 	"bytes"
-	"crypto"
-	"github.com/studyzy/crypto/ecdsa"
 	"crypto/ed25519"
 	"crypto/rsa"
-	"github.com/studyzy/crypto/x509"
 	"encoding/pem"
 	"errors"
 	"fmt"
+	"github.com/studyzy/crypto"
+	"github.com/studyzy/crypto/ecdsa"
+	"github.com/studyzy/crypto/x509"
 	"io/ioutil"
 	"net"
 	"strings"

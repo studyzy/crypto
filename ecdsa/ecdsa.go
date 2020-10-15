@@ -1,9 +1,9 @@
 package ecdsa
 
 import (
-	"crypto"
 	"encoding/asn1"
 	"errors"
+	"github.com/studyzy/crypto"
 	"io"
 	"math/big"
 

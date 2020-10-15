@@ -6,10 +6,10 @@ package tls
 
 import (
 	"bytes"
-	"crypto"
 	"crypto/hmac"
 	"crypto/rsa"
 	"errors"
+	"github.com/studyzy/crypto"
 	"hash"
 	"io"
 	"sync/atomic"

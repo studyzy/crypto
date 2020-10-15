@@ -11,18 +11,11 @@ package x509
 
 import (
 	"bytes"
-	"crypto"
 	"crypto/dsa"
 	"crypto/ed25519"
-	"crypto/rsa"
 	_ "crypto/sha1"
 	_ "crypto/sha512"
 	"crypto/x509/pkix"
-	"github.com/studyzy/crypto/ecdsa"
-	"github.com/studyzy/crypto/elliptic"
-
-	_ "github.com/studyzy/crypto/sha256"
-
 	"encoding/asn1"
 	"encoding/pem"
 	"errors"
@@ -35,6 +28,13 @@ import (
 	"strings"
 	"time"
 	"unicode/utf8"
+
+	"github.com/studyzy/crypto"
+	"github.com/studyzy/crypto/ecdsa"
+	"github.com/studyzy/crypto/elliptic"
+	"github.com/studyzy/crypto/rsa"
+
+	_ "github.com/studyzy/crypto/sha256"
 
 	"golang.org/x/crypto/cryptobyte"
 	cryptobyte_asn1 "golang.org/x/crypto/cryptobyte/asn1"

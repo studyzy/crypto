@@ -6,12 +6,12 @@ package tls
 
 import (
 	"bytes"
-	"crypto"
-	"github.com/studyzy/crypto/elliptic"
-	"github.com/studyzy/crypto/x509"
 	"encoding/pem"
 	"errors"
 	"fmt"
+	"github.com/studyzy/crypto"
+	"github.com/studyzy/crypto/elliptic"
+	"github.com/studyzy/crypto/x509"
 	"io"
 	"net"
 	"os"

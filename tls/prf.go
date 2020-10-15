@@ -5,14 +5,14 @@
 package tls
 
 import (
-	"crypto"
 	"crypto/hmac"
 	"crypto/md5"
 	"crypto/sha1"
-	"github.com/studyzy/crypto/sha256"
 	"crypto/sha512"
 	"errors"
 	"fmt"
+	"github.com/studyzy/crypto"
+	"github.com/studyzy/crypto/sha256"
 	"hash"
 )
 

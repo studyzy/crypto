@@ -6,14 +6,14 @@ package tls
 
 import (
 	"bytes"
-	"crypto"
-	"github.com/studyzy/crypto/ecdsa"
 	"crypto/ed25519"
-	"github.com/studyzy/crypto/elliptic"
 	"crypto/rsa"
 	"encoding/asn1"
 	"errors"
 	"fmt"
+	"github.com/studyzy/crypto"
+	"github.com/studyzy/crypto/ecdsa"
+	"github.com/studyzy/crypto/elliptic"
 	"hash"
 	"io"
 )

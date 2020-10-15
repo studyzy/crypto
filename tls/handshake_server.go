@@ -5,14 +5,14 @@
 package tls
 
 import (
-	"crypto"
-	"github.com/studyzy/crypto/ecdsa"
 	"crypto/ed25519"
 	"crypto/rsa"
 	"crypto/subtle"
-	"github.com/studyzy/crypto/x509"
 	"errors"
 	"fmt"
+	"github.com/studyzy/crypto"
+	"github.com/studyzy/crypto/ecdsa"
+	"github.com/studyzy/crypto/x509"
 	"io"
 	"sync/atomic"
 )

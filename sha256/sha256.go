@@ -1,7 +1,7 @@
 package sha256
 
 import (
-	"crypto"
+	"github.com/studyzy/crypto"
 	"hash"
 
 	"github.com/studyzy/crypto/internal/sm3"
