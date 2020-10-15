@@ -6,7 +6,7 @@ package tls
 
 import (
 	"crypto/md5"
-	"crypto/rsa"
+	"github.com/studyzy/crypto/rsa"
 	"crypto/sha1"
 	"errors"
 	"fmt"

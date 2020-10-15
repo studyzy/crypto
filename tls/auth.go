@@ -7,7 +7,7 @@ package tls
 import (
 	"bytes"
 	"crypto/ed25519"
-	"crypto/rsa"
+	"github.com/studyzy/crypto/rsa"
 	"encoding/asn1"
 	"errors"
 	"fmt"

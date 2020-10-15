@@ -8,7 +8,7 @@ import (
 	"crypto/dsa"
 	"crypto/ecdsa"
 	"crypto/ed25519"
-	"crypto/rsa"
+	"github.com/studyzy/crypto/rsa"
 	"crypto/x509"
 	"encoding/pem"
 	"fmt"

@@ -9,7 +9,7 @@ import (
 	"container/list"
 	"crypto/ed25519"
 	"crypto/rand"
-	"crypto/rsa"
+	"github.com/studyzy/crypto/rsa"
 	"crypto/sha512"
 	"github.com/studyzy/crypto"
 	"github.com/studyzy/crypto/ecdsa"

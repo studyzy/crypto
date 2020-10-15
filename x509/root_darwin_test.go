@@ -5,7 +5,7 @@
 package x509
 
 import (
-	"crypto/rsa"
+	"github.com/studyzy/crypto/rsa"
 	"os"
 	"os/exec"
 	"path/filepath"

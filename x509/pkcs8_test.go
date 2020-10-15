@@ -9,7 +9,7 @@ import (
 	"crypto/ecdsa"
 	"crypto/ed25519"
 	"github.com/studyzy/crypto/elliptic"
-	"crypto/rsa"
+	"github.com/studyzy/crypto/rsa"
 	"encoding/hex"
 	"reflect"
 	"strings"

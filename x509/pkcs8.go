@@ -7,7 +7,7 @@ package x509
 import (
 	"github.com/studyzy/crypto/ecdsa"
 	"crypto/ed25519"
-	"crypto/rsa"
+	"github.com/studyzy/crypto/rsa"
 	"crypto/x509/pkix"
 	"encoding/asn1"
 	"errors"

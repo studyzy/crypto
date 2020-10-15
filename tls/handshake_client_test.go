@@ -6,7 +6,7 @@ package tls
 
 import (
 	"bytes"
-	"crypto/rsa"
+	"github.com/studyzy/crypto/rsa"
 	"github.com/studyzy/crypto/x509"
 	"encoding/base64"
 	"encoding/binary"

@@ -7,7 +7,7 @@ package tls
 import (
 	"bytes"
 	"crypto/hmac"
-	"crypto/rsa"
+	"github.com/studyzy/crypto/rsa"
 	"errors"
 	"github.com/studyzy/crypto"
 	"hash"

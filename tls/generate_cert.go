@@ -14,7 +14,7 @@ import (
 	"crypto/ed25519"
 	"github.com/studyzy/crypto/elliptic"
 	"crypto/rand"
-	"crypto/rsa"
+	"github.com/studyzy/crypto/rsa"
 	"github.com/studyzy/crypto/x509"
 	"crypto/x509/pkix"
 	"encoding/pem"
