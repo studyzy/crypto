@@ -5,7 +5,7 @@
 package tls
 
 import (
-	"crypto/aes"
+	"github.com/studyzy/crypto/aes"
 	"crypto/cipher"
 	"crypto/des"
 	"crypto/hmac"

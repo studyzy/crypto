@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="582c7a39-25d3-4c9d-a5ef-fb011674cd41" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/internal/sm4/sm4.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -198,9 +199,10 @@
       <screen x="0" y="23" width="1440" height="811" />
     </state>
     <state x="320" y="171" key="Vcs.Push.Dialog.v2/0.23.1440.811@0.23.1440.811" timestamp="1602321686454" />
-    <state x="427" y="179" width="586" height="553" key="find.popup" timestamp="1602775949741">
-      <screen x="0" y="23" width="1440" height="806" />
+    <state x="427" y="177" width="586" height="547" key="find.popup" timestamp="1603459374091">
+      <screen x="0" y="23" width="1440" height="797" />
     </state>
+    <state x="427" y="177" width="586" height="547" key="find.popup/0.23.1440.797@0.23.1440.797" timestamp="1603459374091" />
     <state x="427" y="178" width="586" height="548" key="find.popup/0.23.1440.801@0.23.1440.801" timestamp="1601743665443" />
     <state x="427" y="179" width="586" height="553" key="find.popup/0.23.1440.806@0.23.1440.806" timestamp="1602775949741" />
     <state x="427" y="180" width="586" height="556" key="find.popup/0.23.1440.811@0.23.1440.811" timestamp="1602437499227" />

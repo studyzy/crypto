@@ -6,7 +6,7 @@ package tls
 
 import (
 	"bytes"
-	"crypto/aes"
+	"github.com/studyzy/crypto/aes"
 	"crypto/cipher"
 	"crypto/hmac"
 	"github.com/studyzy/crypto/sha256"
